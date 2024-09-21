@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="login">
+        <h1>Login</h1>
+        <form (ngSubmit)="authenticate()">
+            <div class="item">
+                <label for="">
+                    Email
+                </label>
+                <div class="input-group">
+                    <input type="email" [(ngModel)]="email" required  class="form-control" placeholder="Email" name="email">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Password
+                </label>
+                <div class="input-group mb-3">
+                    <input type="password" [(ngModel)]="password" required  class="form-control" placeholder="Password" name="password">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                </div>
+            </div>
+            <div class="connecter">
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg btn-block" type="submit">Login</button>
+
+            </div>
+        </form>
+        <i>Forgot password ?</i>
+
+    </div>
+</div>
