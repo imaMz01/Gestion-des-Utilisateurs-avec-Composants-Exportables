@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './Components/login/login.component';
 import { ResestPassWordComponent } from './Components/resest-pass-word/resest-pass-word.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -13,7 +15,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     LoginComponent

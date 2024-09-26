@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthService } from './auth.service';
+import { ShareDataService } from './share-data.service';
 
-describe('AuthService', () => {
-  let service: AuthService;
+describe('ShareDataService', () => {
+  let service: ShareDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthService);
+    service = TestBed.inject(ShareDataService);
   });
 
   it('should be created', () => {

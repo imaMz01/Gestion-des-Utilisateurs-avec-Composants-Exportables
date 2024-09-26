@@ -1,0 +1,147 @@
+:root {
+    --main-bg-color: #009d63;
+    --main-text-color: #007e9d;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1ddef;
+  }
+  
+  .primary-text {
+    color: var(--main-text-color);
+  }
+  
+  .second-text {
+    color: var(--second-text-color);
+  }
+  
+  .primary-bg {
+    background-color: var(--main-bg-color);
+  }
+  
+  .secondary-bg {
+    background-color: var(--second-bg-color);
+  }
+  
+  .rounded-full {
+    border-radius: 100%;
+  }
+  
+  #wrapper {
+    overflow-x: hidden;
+    background-image: linear-gradient(
+      to right,
+      #baf3f0,
+      #c2f3f5,
+      #cbeef7,
+      #d4f3f8,
+      #ddf3fa
+    );
+  }
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+  
+  #menu-toggle {
+    cursor: pointer;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 20px 30px;
+  }
+  
+  .list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+  }
+  table tr td,
+  table tr th{
+    position: relative;
+    border: none;
+    min-width: 120px;
+    text-align: center;
+    height: 30px;
+}
+table tr th i,
+table tr td i{
+    cursor: pointer;
+    color: black;
+}
+table tr td button{
+    margin: 5px;
+}
+
+.dropdown-menu{
+  cursor: pointer;
+}
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+  
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+  .formAdd{
+    position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: white;
+    border-radius: 6px;
+    width:40%;
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formAdd h1{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.formAdd label{
+    margin: 10px;
+    font-size: 20px;
+}
+.formAdd label button{
+    background: none;
+    border: none;
+    position: relative;
+    right: 0;
+}

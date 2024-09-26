@@ -1,5 +1,4 @@
 <div class="d-flex" id="wrapper">
-    
     <div id="page-content-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
             <div class="d-flex align-items-center">
@@ -17,8 +16,8 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user me-2"></i>{{userAuthenticated.name}}
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">{{userAuth.name}}
+                            <i class="fas fa-user me-2"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" (click)="logOut()">Logout</a></li>
@@ -27,22 +26,5 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="container-fluid px-4">
-            <div class="row g-3 my-2">
-                
-            </div>
-            
-            <div class="row my-5">
-                <div class="formAdd">
-                    <h1>Your profile</h1>
-                    <label for="">Name : {{userAuthenticated.name }} <button (click)="update(userAuthenticated)"><i class="bi bi-pencil-square"></i></button></label>
-                    <label for="">Email : {{userAuthenticated.email}} <button (click)="update(userAuthenticated)"><i class="bi bi-pencil-square"></i></button></label>
-                    <label for="">Role : {{userAuthenticated.role.role}} <button (click)="update(userAuthenticated)"><i class="bi bi-pencil-square"></i></button></label>
-                </div>
-            </div>
-
-
-        </div>
     </div>
 </div> 

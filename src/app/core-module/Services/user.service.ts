@@ -13,11 +13,20 @@ export class UserService {
   ]
   users : User[] = [
     {id:1,name:"Khalil",email:"khalil@gmail.com",password:"123456789",role:this.roles[1]},
-    {id:1,name:"Taha",email:"taha@gmail.com",password:"987654321",role:this.roles[0]}
+    {id:2,name:"Taha",email:"taha@gmail.com",password:"987654321",role:this.roles[0]}
   ]
   constructor() { }
 
   getUsers(){
     return this.users
+  }
+  getRoles(){
+    return this.roles
+  }
+  delete(id:number){
+    let index = this.users.findIndex(user => user.id===id)
+    if(index!=-1){
+      this.users.splice(index,1)
+    }
   }
 }

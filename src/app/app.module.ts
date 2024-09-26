@@ -4,8 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModuleModule } from './core-module/core-module.module';
-import { FormsModule } from '@angular/forms';
 import { AuthModuleModule } from './auth-module/auth-module.module';
+import { AdminModuleModule } from './admin-module/admin-module.module';
+import { UserModuleModule } from './user-module/user-module.module';
+import { SharedModuleModule } from './shared-module/shared-module.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,8 +18,10 @@ import { AuthModuleModule } from './auth-module/auth-module.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModuleModule,
-    AuthModuleModule
+    UserModuleModule,
+    SharedModuleModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
