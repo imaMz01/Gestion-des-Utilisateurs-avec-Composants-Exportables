@@ -1,7 +1,7 @@
 <div class="container">
     <div class="login">
         <h1>Login</h1>
-        <form (ngSubmit)="authenticate()">
+        <form (ngSubmit)="authenticate()" #formLogin="ngForm">
             <div class="item">
                 <label for="">
                     Email
@@ -19,13 +19,17 @@
                     <input type="password" [(ngModel)]="password" required  class="form-control" placeholder="Password" name="password">
                     <span class="input-group-text"><i class="bi bi-lock"></i></span>
                 </div>
+                <div class="links">
+                    <i (click)="reset()">Forgot password ?</i>
+                    <i (click)="register()">Sign up</i>
+                </div>
             </div>
             <div class="connecter">
-                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg btn-block" type="submit">Login</button>
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg btn-block" [disabled]="!formLogin.valid" type="submit">Log In</button>
                 
             </div>
         </form>
-        <i>Forgot password ?</i>
+        
 
     </div>
 </div>

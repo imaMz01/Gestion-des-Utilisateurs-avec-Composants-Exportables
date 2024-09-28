@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="login">
+        <h4> Reset your password </h4>
+        <form [formGroup]="formPass" (ngSubmit)="submitForm()">
+            <div class="item">
+                <label for="">
+                    Password
+                </label>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="formPass.get('password')?.touched && formPass.get('password')?.hasError('passwordInvalid')">
+                    <i class="bi bi-exclamation-circle"></i> This field is invalid
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="formPass.get('password')?.touched && formPass.get('password')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Confirm your password
+                </label>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="confirmPassword">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="formPass.get('confirmPassword')?.touched && formPass.hasError('passwordsMismatch')">
+                    <i class="bi bi-exclamation-circle"></i> Passwords do not match. Please make sure both fields are identical
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="formPass.get('confirmPassword')?.touched && formPass.get('confirmPassword')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+            </div>
+            <div class="connecter">
+                <button  data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg btn-block" type="submit" [disabled]="!formPass.valid">Reset password</button>
+                
+            </div>
+        </form>
+
+    </div>
+</div>

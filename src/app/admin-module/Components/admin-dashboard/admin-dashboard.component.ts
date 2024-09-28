@@ -12,7 +12,7 @@ import { ShareDataService } from '../../Services/share-data.service';
 })
 export class AdminDashboardComponent implements OnInit{
 
-  users:User[]=this.userService.getUsers()
+  users:User[]=[]
   userAuthenticated!:User
   constructor(private userService:UserService,private autho:AuthoService,private route:Router,private shareData:ShareDataService){
      autho.getUser.subscribe(user=> {
@@ -34,5 +34,13 @@ export class AdminDashboardComponent implements OnInit{
   }
   logOut(){
     this.route.navigate(['/Login'])
+  }
+  enable(id:number){
+    this.users.filter(user => {
+      if(user.id ==id){
+        user.activated=true
+      }
+    })
+    
   }
 }

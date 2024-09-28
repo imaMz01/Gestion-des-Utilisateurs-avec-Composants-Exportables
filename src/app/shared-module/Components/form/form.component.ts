@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class FormComponent {
 
   @Input() userShared !:User
-  @Input() redirect : string=""
+  @Input() redirect : String=""
   roles : Role[]=this.userService.getRoles()
   role !: Role|undefined
   constructor(private userService:UserService,private route:Router){}

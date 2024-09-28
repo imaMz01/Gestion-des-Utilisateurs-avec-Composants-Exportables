@@ -8,7 +8,7 @@
     justify-content: center;
     flex-direction: column;
 }
-.container .login h4{
+.container .login h1{
     position: relative;
     margin: 20px 20px;
     color: black;
@@ -19,19 +19,19 @@
 .container .login{
     position: relative;
     width: 40%;
-    min-height: 50%;
+    min-height: 70%;
     background-color: rgb(219, 219, 223);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 10px;
 }
 .container .login form{
     position: relative;
     width: 80%;
     height: 100%;
-    margin-top: 10px;
 }
 .container .login form .item{
     position: relative;
@@ -42,7 +42,12 @@
     color: black;
     margin-bottom: 5px;
 }
-
+.container .login form .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
 .container .login form .connecter{
     position: relative;
     width: 100%;

@@ -19,7 +19,7 @@
 .container .login{
     position: relative;
     width: 40%;
-    min-height: 50%;
+    min-height: 60%;
     background-color: rgb(219, 219, 223);
     border-radius: 10px;
     display: flex;
@@ -41,7 +41,12 @@
     color: black;
     margin-bottom: 5px;
 }
-
+.container .login form .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
 .container .login form .connecter{
     position: relative;
     width: 100%;

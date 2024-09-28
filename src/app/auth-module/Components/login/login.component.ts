@@ -19,12 +19,18 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
     
   }
+  reset(){
+    this.route.navigate(['/Reset'])
+  }
+  register(){
+    this.route.navigate(['/Sign Up'])
+  }
   authenticate(){
     console.log(this.email)
     console.log(this.password)
     var result = this.auth.authenticate(this.email,this.password)
     if(typeof(result) === 'string'){
-      this.toastr.error("Email or password is incorrect","Error")
+      this.toastr.error(result,"Error")
     }else{
       this.toastr.success("Authentication successful","Sucess")
       this.autho.setUserAuth(result)

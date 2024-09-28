@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="login">
+        <h1>Sign Up</h1>
+        <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+            <div class="item">
+                <label for="">
+                    Name
+                </label>
+                <div class="input-group">
+                    <input type="email"  required  class="form-control" placeholder="Name" formControlName="name">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Email
+                </label>
+                <div class="input-group">
+                    <input type="email"  required  class="form-control" placeholder="Email" formControlName="email">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.hasError('email')">
+                    <i class="bi bi-exclamation-circle"></i> This field is invalid
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Password
+                </label>
+                <div class="input-group mb-3">
+                    <input type="password"  required  class="form-control" placeholder="Password" formControlName="password">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('passwordInvalid')">
+                    <i class="bi bi-exclamation-circle"></i> This field is invalid
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+            </div>
+            <div class="item">
+                <label for="">
+                    Confirm password
+                </label>
+                <div class="input-group mb-3">
+                    <input type="password"  required  class="form-control" placeholder="Confirm password" formControlName="confirmPassword">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.hasError('passwordsMismatch')">
+                    <i class="bi bi-exclamation-circle"></i> Passwords do not match. Please make sure both fields are identical
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+            </div>
+            <div class="connecter">
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg btn-block"  type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+                
+            </div>
+        </form>
+        
+
+    </div>
+</div>

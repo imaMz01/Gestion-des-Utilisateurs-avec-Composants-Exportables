@@ -1,1 +1,27 @@
-<p>resest-pass-word works!</p>
+<div class="container">
+    <div class="login">
+        <h4> Enter your email </h4>
+        <form (ngSubmit)="check()" [formGroup]="emailForm">
+            <div class="item">
+                <label for="">
+                    Email
+                </label>
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="emailForm.get('email')?.touched && emailForm.get('email')?.hasError('required')">
+                    <i class="bi bi-exclamation-circle"></i> This field is required
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="emailForm.get('email')?.touched && emailForm.get('email')?.hasError('email')">
+                    <i class="bi bi-exclamation-circle"></i> This field is invalid
+                </div>
+            </div>
+            <div class="connecter">
+                <button [disabled]="!emailForm.valid" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg btn-block" type="submit">Reset password</button>
+                
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -10,6 +10,7 @@ import { UserModuleModule } from './user-module/user-module.module';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

@@ -1,14 +1,14 @@
 <div class="container">
   <div class="formAdd" >
       <h1>Edit user</h1>
-      <form >
+      <form #formUser = "ngForm">
       <input class="form-control" type="text" placeholder="Name ... "  name="name" [(ngModel)]="userShared.name">
       <input class="form-control" type="email" placeholder="Email ... "  name="email" [(ngModel)]="userShared.email">
-      <select class="selectpicker show-tick" [(ngModel)]="role" (change)="updateRole($event)">
+      <select class="selectpicker show-tick" [(ngModel)]="role" (change)="updateRole($event)" *ngIf="userShared.role.role=='admin'">
           <option value="" disabled selected>select a role</option>
           <option value="{{role.role}}" *ngFor="let role of roles">{{role.role}}</option>
           <!-- <option value="user">User</option> -->
-        </select>          
+      </select>          
       <button type="submit" class="btn btn-dark" (click)="update()">Update</button>
     </form>
   </div>

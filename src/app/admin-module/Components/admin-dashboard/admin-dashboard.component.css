@@ -82,11 +82,12 @@
   table tr td,
   table tr th{
     position: relative;
-    border: none;
     min-width: 120px;
     text-align: center;
     height: 30px;
+    text-align: left;
 }
+
 table tr th i,
 table tr td i{
     cursor: pointer;
@@ -112,4 +113,10 @@ table tr td button{
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
+  }
+  .activated{
+    background-color: rgb(164, 247, 164);
+  }
+  .inactivated{
+    background-color: rgb(245, 143, 143);
   }

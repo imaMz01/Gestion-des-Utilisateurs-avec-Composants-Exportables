@@ -12,9 +12,21 @@ export class AuthService {
   user!:User|undefined
    authenticate(email : String,password : String):User | string{
      this.user = this.users.find(user => user.email === email && user.password === password);
-     return this.user || "User or password is incorrect"; 
+      // if(this.user && this.user.activated)
+      //   return this.user
+      // else if(this.user && !this.user.activated)
+      //   return "Your account doesn't activated yet"
+      // else
+      //   return "User or password is incorrect"
+      return this.user ?(this.user.activated ? this.user : "Your account isn't activated yet") : "User or password is incorrect" 
   }
-
+  checkEmail(email:String) : boolean{
+    let user = this.users.find(user => user.email === email)
+    if(user != undefined){
+      return true
+    }
+    return false
+  }
   checkRoleAdmin() : boolean{
     if(this.user && this.user.role.role === 'admin'){
       return true

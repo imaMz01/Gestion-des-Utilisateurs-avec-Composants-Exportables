@@ -42,19 +42,22 @@
                                 <th scope="col" width="50"></th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
+                                <th scope="col"> Activated</th>
                                 <th scope="col">Role</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of users">
-                                <th scope="row">{{user.id}}</th>
-                                <td>{{user.name}}</td>
-                                <td>{{user.email}}</td>
-                                <td>{{user.role.role}}</td>
-                                <td>
+                            <tr *ngFor="let user of users" >
+                                <th scope="row" [ngClass]="user.activated ? 'activated' : 'inactivated'">{{user.id}}</th>
+                                <td [ngClass]="user.activated ? 'activated' : 'inactivated'">{{user.name}}</td>
+                                <td [ngClass]="user.activated ? 'activated' : 'inactivated'">{{user.email}}</td>
+                                <td [ngClass]="user.activated ? 'activated' : 'inactivated'">{{user.role.role}}</td>
+                                <td [ngClass]="user.activated ? 'activated' : 'inactivated'">{{user.activated}}</td>
+                                <td [ngClass]="user.activated ? 'activated' : 'inactivated'">
                                     <button class="btn btn-warning" (click)="update(user)">Modifier</button>
                                     <button class="btn btn-danger" type="button" (click)="delete(user.id)">Supprimer</button>
+                                    <button class="btn btn-success" *ngIf="!user.activated" (click)="enable(user.id)">enable</button>
                                 </td>
                             </tr>
                         </tbody>

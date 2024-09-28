@@ -8,7 +8,7 @@
     justify-content: center;
     flex-direction: column;
 }
-.container .login h4{
+.container .login h1{
     position: relative;
     margin: 20px 20px;
     color: black;
@@ -26,12 +26,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 20px;
 }
 .container .login form{
     position: relative;
     width: 80%;
     height: 100%;
-    margin-top: 10px;
 }
 .container .login form .item{
     position: relative;
@@ -62,10 +62,4 @@
 }
 .container .login i:hover{
     color: gray;
-}
-.alert{
-    color: red;
-    margin: 7px;
-    align-items: center;
-    justify-content: center;
 }
